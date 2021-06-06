@@ -63,7 +63,7 @@ public class ClassBuilder
 		sb.append("package ").append(packageName).append("; ");
 		for (String classImport : getClassImports())
 		{
-			if (StringUtils.substringBeforeLast(classImport, ".").equals("java.lang"))
+			if (!StringUtils.substringBeforeLast(classImport, ".").equals("java.lang"))
 			{
 				sb.append("import ").append(classImport).append("; ");
 			}

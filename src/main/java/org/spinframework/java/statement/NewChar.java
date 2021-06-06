@@ -25,7 +25,7 @@ public class NewChar extends StatementBuilder
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.append("char ").append(returnVariable.getName());
-		sb.append(" = ").append(literal).append("; ");
+		sb.append(" = '").append(literal).append("'; ");
 		return sb.toString();
 	}
 }

@@ -18,7 +18,7 @@ public class BuilderCentral
 
 		funcPool.addClass(ArchUtils.class, null);
 
-		funcPool.addClass(CharUtils.class, null);
+		funcPool.addClass(CharUtils.class, Arrays.asList("toIntValue"));
 
 		funcPool.addClass(StringUtils.class, Arrays.asList("abbreviate", "abbreviateMiddle", "getBytes"));
 
