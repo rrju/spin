@@ -58,10 +58,24 @@ public class MethodBuilder
 		for (StatementBuilder stmt : statements)
 		{
 			ret.addAll(stmt.getClassImports());
+			for (Class<?> cls : stmt.getExceptions())
+			{
+				ret.add(cls.getName());
+			}
 		}
 		if (returnVariable != null && !returnVariable.getClazz().isPrimitive())
 		{
 			ret.add(returnVariable.getClazz().getName());
+		}
+		return ret;
+	}
+
+	private Set<Class<?>> getExceptions()
+	{
+		Set<Class<?>> ret = new HashSet<>();
+		for (StatementBuilder stmt : statements)
+		{
+			ret.addAll(stmt.getExceptions());
 		}
 		return ret;
 	}
@@ -113,7 +127,16 @@ public class MethodBuilder
 		sb.append("public ");
 		sb.append(returnVariable == null ? "void" : returnVariable.getClazz().getSimpleName());
 		sb.append(" ").append(methodName).append("() ");
-		sb.append("throws Exception ");
+		int exceptionCnt = 0;
+		if (!getExceptions().isEmpty())
+		{
+			++exceptionCnt;
+			sb.append(exceptionCnt == 1 ? " throws " : ",");
+			for (Class<?> cls : getExceptions())
+			{
+				sb.append(cls.getSimpleName());
+			}
+		}
 		sb.append("{");
 		for (StatementBuilder stmt : statements)
 		{

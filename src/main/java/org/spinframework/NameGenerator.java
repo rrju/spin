@@ -36,7 +36,7 @@ public class NameGenerator
 			String verb = faker.resolve("verbs.base");
 			String noun = faker.resolve("construction.standard_cost_codes");
 			String str = verb + " " + noun;
-			String word = WordUtils.capitalize(WordUtils.capitalizeFully(str).replaceAll("[^a-zA-Z]", ""));
+			String word = WordUtils.uncapitalize(WordUtils.capitalizeFully(str).replaceAll("[^a-zA-Z]", ""));
 
 			if (SourceVersion.isName(word))
 			{

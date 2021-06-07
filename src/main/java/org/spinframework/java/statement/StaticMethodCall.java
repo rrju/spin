@@ -34,6 +34,12 @@ public class StaticMethodCall extends StatementBuilder
 	}
 
 	@Override
+	public Set<Class<?>> getExceptions()
+	{
+		return new HashSet<>(Arrays.asList(method.getExceptionTypes()));
+	}
+
+	@Override
 	public String toSourceCode()
 	{
 		StringBuilder sb = new StringBuilder();

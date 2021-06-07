@@ -25,6 +25,11 @@ public abstract class StatementBuilder
 		return Collections.emptySet();
 	}
 
+	public Set<Class<?>> getExceptions()
+	{
+		return Collections.emptySet();
+	}
+
 	public Variable getReturnVariable()
 	{
 		return returnVariable;

@@ -22,6 +22,6 @@ public class ReturnStatement extends StatementBuilder
 	@Override
 	public String toSourceCode()
 	{
-		return "return " + (input == null ? "" : input.getName()) + "; ";
+		return (input == null ? "" : "return " + input.getName() + "; ");
 	}
 }
