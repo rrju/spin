@@ -1,1 +1,1 @@
-Welcome to the Spin Framework. The first rule of the Spin Framework is: you don't talk about the Spin Framework.
+Welcome to Spin Framework. The first rule of Spin Framework is: you do not talk about Spin Framework.
